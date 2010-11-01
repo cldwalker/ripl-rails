@@ -1,0 +1,23 @@
+== Description
+This provides an alternative to script/console and a ripl Rails plugin to be reused with
+app-specific shells. Compatible with Rails 2.3.x and Rails 3.x.
+
+== Install
+Install the gem with:
+
+    sudo gem install ripl-rails
+
+== Use Executable
+
+    $ ripl rails
+    Loading development environment (Rails 3.0.0)    
+    >> ...
+
+== Use Plugin
+
+The ripl plugin can be used to create Rails app-specific shells:
+
+    require 'ripl'
+    require 'ripl/rails'
+    # App specific setup
+    Ripl.start

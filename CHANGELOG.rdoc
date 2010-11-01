@@ -1,0 +1,2 @@
+== 0.1.0
+* Initial plugin and executable for Rails 2.3.x and Rails 3.x
