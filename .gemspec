@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = "gabriel.horner@gmail.com"
   s.homepage    = "http://github/com/cldwalker/ripl-rails"
   s.summary = "Alternative to script/console using ripl"
-  s.description =  "TODO"
+  s.description =  "This provides an alternative to script/console and a ripl Rails plugin to be reused with app-specific shells. Compatible with Rails 2.3.x and Rails 3.x."
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = 'tagaholic'
   s.executables = ['ripl-rails']
