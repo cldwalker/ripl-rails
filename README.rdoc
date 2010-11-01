@@ -7,13 +7,13 @@ Install the gem with:
 
     sudo gem install ripl-rails
 
-== Use Executable
+== Executable Usage
 
     $ ripl rails
     Loading development environment (Rails 3.0.0)    
     >> ...
 
-== Use Plugin
+== Plugin Usage
 
 The ripl plugin can be used to create Rails app-specific shells:
 
