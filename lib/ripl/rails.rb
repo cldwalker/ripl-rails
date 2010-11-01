@@ -1,5 +1,7 @@
 module Ripl
   module Rails
+    VERSION = '0.1.0'
+
     def before_loop
       load_rails
       super
@@ -24,4 +26,4 @@ module Ripl
   end
 end
 
-Ripl::Shell.send :include, Ripl::Rails
+Ripl::Shell.send :include, Ripl::Rails if defined? Ripl::Shell
