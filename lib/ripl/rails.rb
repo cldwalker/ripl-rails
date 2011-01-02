@@ -15,7 +15,8 @@ module Ripl
       require 'rails' unless defined? ::Rails
       if ::Rails.version >= '3.0'
         Object.const_set :APP_PATH, File.expand_path("#{Dir.pwd}/config/application")
-        require 'rails/commands/console'
+        require 'rails/console/app'
+        require 'rails/console/helpers'
         require APP_PATH
         ::Rails.application.require_environment!
       else
