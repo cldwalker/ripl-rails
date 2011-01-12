@@ -9,7 +9,7 @@ module Ripl
 
     def load_rails
       abort "Not in a Rails environment" unless File.exists?("#{Dir.pwd}/config/boot.rb")
-      ENV['RAILS_ENV'] = ARGV[0] if ARGV[0]
+      ENV['RAILS_ENV'] = ARGV[0] if ARGV[0].to_s[/^[^-]/]
 
       require "#{Dir.pwd}/config/boot"
       require 'rails' unless defined? ::Rails
