@@ -5,6 +5,7 @@ module Ripl::Rails
 
   def before_loop
     load_rails
+    require 'ripl/rails/commands' if config[:rails_commands]
     super
   end
 
@@ -28,3 +29,4 @@ module Ripl::Rails
 end
 
 Ripl::Shell.include Ripl::Rails
+Ripl.config[:rails_commands] = true
