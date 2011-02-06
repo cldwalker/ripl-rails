@@ -5,7 +5,12 @@ app-specific shells. Compatible with Rails 2.3.x and Rails 3.x.
 == Install
 Install the gem with:
 
-    sudo gem install ripl-rails
+    gem install ripl-rails
+
+== Setup
+Add ripl-rails to your Gemfile:
+
+    gem 'ripl-rails', :require => 'ripl/rails'
 
 == Executable Usage
 

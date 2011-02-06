@@ -1,2 +1,6 @@
+= 0.1.1
+* Fix argument bug preventing global options from being passed
+* Fix rails3 loading irb
+
 == 0.1.0
 * Initial plugin and executable for Rails 2.3.x and Rails 3.x
