@@ -1,3 +1,6 @@
+= 0.1.2
+* Allow usage from a rails app's subdirectory
+
 = 0.1.1
 * Fix argument bug preventing global options from being passed
 * Fix rails3 loading irb
