@@ -2,7 +2,7 @@ require 'ripl'
 require 'pathname'
 
 module Ripl::Rails
-  VERSION = '0.1.1'
+  VERSION = '0.1.2'
 
   def self.find_rails_root!
     until Pathname.pwd.join('config', 'boot.rb').exist?
