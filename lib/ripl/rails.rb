@@ -5,33 +5,17 @@ module Ripl
   module Rails
     VERSION = '0.1.1'
 
-    class << self # inspired by the Rails 3 source
-      def find_rails_root!
-        cwd = Dir.pwd
-        return false unless in_rails_application? || in_rails_application_subdirectory?
-        return true if in_rails_application?
+    def self.find_rails_root!
+      until Pathname.pwd.join('config', 'boot.rb').exist?
+        abort "Not in a Rails environment" if Pathname.pwd.root?
         Dir.chdir '..'
-        find_rails_root! unless cwd == Dir.pwd
-      rescue SystemCallError
-        return false # could not chdir
-      end
-
-      def in_rails_application?
-        File.exists?(File.join [Dir.pwd, 'config', 'boot.rb'])
-      end
-
-      def in_rails_application_subdirectory?(path = Pathname.new(Dir.pwd))
-        File.exists?(File.join [path, 'config', 'boot.rb']) || !path.root? && in_rails_application_subdirectory?(path.parent)
       end
     end
 
     def before_loop
-      if Ripl::Rails.find_rails_root!
-        load_rails
-        super
-      else
-        abort "Not in a Rails environment" unless File.exists?("#{Dir.pwd}/config/boot.rb")
-      end
+      Ripl::Rails.find_rails_root!
+      load_rails
+      super
     end
 
     def load_rails
