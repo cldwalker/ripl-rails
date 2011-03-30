@@ -26,3 +26,6 @@ The ripl plugin can be used to create Rails app-specific shells:
     require 'ripl/rails'
     # App specific setup
     Ripl.start
+
+== Credits
+* janlelis

@@ -1,3 +1,6 @@
+== 0.1.2
+* Call ripl-rails from an app's subdirectory
+
 = 0.1.1
 * Fix argument bug preventing global options from being passed
 * Fix rails3 loading irb
