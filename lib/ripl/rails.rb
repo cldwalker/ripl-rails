@@ -15,12 +15,11 @@ module Ripl::Rails
     ENV['RAILS_ENV'] = ARGV[0] if ARGV[0].to_s[/^[^-]/]
 
     require "#{Dir.pwd}/config/boot"
-    require 'rails' unless defined? ::Rails
-    if ::Rails.version >= '3.0'
+    if File.exists?("#{Dir.pwd}/config/application.rb")
       Object.const_set :APP_PATH, File.expand_path("#{Dir.pwd}/config/application")
+      require APP_PATH
       require 'rails/console/app'
       require 'rails/console/helpers'
-      require APP_PATH
       ::Rails.application.require_environment!
     else
       ["#{Dir.pwd}/config/environment", 'console_app', 'console_with_helpers'].each {|e| require e }
