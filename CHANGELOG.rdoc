@@ -1,3 +1,6 @@
+== 0.1.3
+* Leave rails requiring order to rails app
+
 == 0.1.2
 * Call ripl-rails from an app's subdirectory
 
