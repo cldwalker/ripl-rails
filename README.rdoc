@@ -29,3 +29,4 @@ The ripl plugin can be used to create Rails app-specific shells:
 
 == Credits
 * janlelis
+* wuputah
