@@ -18,8 +18,13 @@ module Ripl::Rails
     if File.exists?("#{Dir.pwd}/config/application.rb")
       Object.const_set :APP_PATH, File.expand_path("#{Dir.pwd}/config/application")
       require APP_PATH
+
       require 'rails/console/app'
       require 'rails/console/helpers'
+      if defined?(Rails::ConsoleMethods)
+        Ripl::Commands.include Rails::ConsoleMethods
+      end
+
       ::Rails.application.require_environment!
     else
       ["#{Dir.pwd}/config/environment", 'console_app', 'console_with_helpers'].each {|e| require e }

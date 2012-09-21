@@ -15,7 +15,8 @@ Add ripl-rails to your Gemfile:
 == Executable Usage
 
     $ ripl rails
-    Loading development environment (Rails 3.0.0)    
+    Loading development environment (Rails 3.2.8)
+    # Interact with your usual console methods: app, reload!, controller, helper
     >> ...
 
 == Plugin Usage
