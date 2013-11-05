@@ -32,7 +32,10 @@ module Ripl::Rails
     puts "Loading #{::Rails.env} environment (Rails #{::Rails.version})"
   end
 
-  def before_loop
+  def in_loop
+    # We need to load rails last thing before we go in the eval loop
+    # because it loads bundler, and previous plugin gems might not be
+    # installed with bundler
     Ripl::Rails.find_rails_root!
     Ripl::Rails.load_rails
     super
