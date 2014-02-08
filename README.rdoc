@@ -1,6 +1,6 @@
 == Description
 This provides an alternative to script/console and a ripl Rails plugin to be reused with
-app-specific shells. Compatible with Rails 2.3.x and Rails 3.x.
+app-specific shells. Compatible with Rails 2.3.x, Rails 3.x and Rails 4.x.
 
 == Install
 Install the gem with:
